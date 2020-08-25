@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class Controller {
 
     public void runApp() {
-        DatabaseInit DatabaseInit = new DatabaseInit();
-        String statement = getStatementsFromtxt("src/main/Resources/dbInit.sql");
-        DatabaseInit.initializeDb(statement);
+        DatabaseInit databaseInit = new DatabaseInit();
+        String statement = getStatementsFromtxt("/Users/mzi/IdeaProjects/Sql-application1/src/main/Resources/dbInit.sql");
+        databaseInit.initializeDb(statement);
 
 
 
@@ -30,31 +30,31 @@ public class Controller {
         int userChoice = View.getUserChoice(options.length);
         switch (userChoice){
             case 1:
-                List<String> mentorNames = DatabaseInit.getMentorsTwoNames();
+                List<String> mentorNames = databaseInit.getMentorsTwoNames();
                 View.showPersonList(mentorNames);
                 break;
             case 2:
-                List<String> mentorNickNames = DatabaseInit.getMentorsNickames();
+                List<String> mentorNickNames = databaseInit.getMentorsNickames();
                 View.showPersonList(mentorNickNames);
                 break;
             case 3:
-                List<String> carolData = DatabaseInit.getCarolData();
+                List<String> carolData = databaseInit.getCarolData();
                 View.showPersonList(carolData);
                 break;
             case 4:
-                List<String> carolCorrectData = DatabaseInit.getCorrectCarolData();
+                List<String> carolCorrectData = databaseInit.getCorrectCarolData();
                 View.showPersonList(carolCorrectData);
                 break;
             case 5:
-                List<String> newApplicantData = DatabaseInit.getNewApplicant();
+                List<String> newApplicantData = databaseInit.getNewApplicant();
                 View.showPersonList(newApplicantData);
                 break;
             case 6:
-                List<String> updateApplicantData = DatabaseInit.updatePhoneNumber();
+                List<String> updateApplicantData = databaseInit.updatePhoneNumber();
                 View.showPersonList(updateApplicantData);
                 break;
             case 7:
-                List<String> deleteSpecificUsers = DatabaseInit.deleteSpecificApplicants();
+                List<String> deleteSpecificUsers = databaseInit.deleteSpecificApplicants();
                 View.showPersonList(deleteSpecificUsers);
                 break;
             case 8:

@@ -30,8 +30,11 @@ public class DatabaseInit {
 
     protected void connectToSQL() {
         try {
+            String url = "jdbc:postgresql://ec2-54-195-247-108.eu-west-1.compute.amazonaws.com/d1gpea0p8fdql6";
+            String user = "thepdxsfidjnkp";
+            String password = "7f1ef87176a417c53be5b14ce40dd4035f71b7179567f991575500edfa9d3f52";
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection("jdbc:postgresql://ec2-54-195-247-108.eu-west-1.compute.amazonaws.com/d1gpea0p8fdql6", "thepdxsfidjnkp", "7f1ef87176a417c53be5b14ce40dd4035f71b7179567f991575500edfa9d3f52");
+            c = DriverManager.getConnection(url, user, password);
             c.setAutoCommit(true);
             stm = c.createStatement();
         } catch (ClassNotFoundException | SQLException e) {

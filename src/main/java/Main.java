@@ -1,11 +1,10 @@
-/**
- * Hello world!
- *
- */
-public class Main
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+import Controller.Controller;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Controller controller = new Controller();
+        controller.runApp();
     }
+
 }
